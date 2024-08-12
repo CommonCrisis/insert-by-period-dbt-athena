@@ -11,7 +11,7 @@ Make sure your incremental dbt model has the following structure:
 {{ config block }}
 
 with model as (
-  select - from source
+  select * from source
   where __period_filter__
 )
 ```
@@ -27,7 +27,7 @@ The **parameters** to set in the config block are:
 - **src_table_timestamp_field**: *optional- if your source table for your incremental model has another name for the `timestamp_field` you can provide it here
 - **is_timestamp_string**: If this column is not datetime or date type but varchar set it to `true`
 - **start_date¹**: The first date the processing will be executed on
-- **days_before_today¹**: Here you can provide a number as string. The `start_date` will then be calculated by `today - days_before_today` as date
+- **days_before_today¹**: Here you can provide a number as string. The `start_date` will then be calculated by `today - days_before_today` as date. This will overwrite `start_date`
 - **stop_date¹**: *optional- A due date for the processing - here it will stop chunking the source table. If you set this `force_dates` will be enabled and only dates between `start_date` and `stop_date` will be processed
 - **period¹**: The chunk size - [see interval functions](https://trino.io/docs/current/functions/datetime.html#interval-functions)
 - **unique_key**: *optional- [See athena dbt adapter](https://github.com/dbt-athena/dbt-athena)
