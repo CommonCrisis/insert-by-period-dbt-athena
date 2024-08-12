@@ -41,7 +41,7 @@
     additional_filter_logic,
     filter_columns
 )-%}
-    {%- if target.name in ["merge", "local"] -%}
+    {%- if target.name in ["merge"] -%}
         -- Here you may remove the "local" or "merge" to allow a bigger built - then force_dates need to be set
         -- Or you set a start_date --> That sets force_date to true
         {% do dbt_utils.log_info("Running in test mode - this will always return 0 results") %}
