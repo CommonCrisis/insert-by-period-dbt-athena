@@ -1,3 +1,6 @@
+Macro is based on: https://gist.github.com/jessedobbelaere/6fdb593f9e2cc732e9f142c56c9bac87
+
+
 This macro allows to build incremental models by splitting the source table into smaller chunks. This is handy if the source table is really really big and processing would take longer than 30 minutes.
 In a nutshell the macro splits the source table in a for loop into chunks by `timestamp_field`.
 In version 2 you can add multiple filters to further reduce the amount of source data.
