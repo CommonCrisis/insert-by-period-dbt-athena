@@ -68,6 +68,6 @@ The **parameters** to set in the config block are:
 
 If `var(...)` is set it actually not meant to be hardcoded by the parameters should be provided in you dbt command:
 
-`dbt run -s my_model --vars '{"start_date": "2024-05-30", "stop_date": "2024-06-03", "filter_column_values": [[77], [3, 4, 6]], "target_filter_column_names": ["project_id"], "source_filter_column_names": ["project_key"]}'`
+`dbt run -s my_model --vars '{"start_date": "2024-05-30", "stop_date": "2024-06-03", "filter_column_values": [[3, 4, 6], ["test_1", "test_33"]], "target_filter_column_names": ["project_id", "something_else"], "source_filter_column_names": ["project_key", "something_else"]}'`
 
 You can check out the [--vars statement here](https://docs.getdbt.com/docs/build/project-variables).
